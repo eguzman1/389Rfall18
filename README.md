@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # CMSC389R: Introduction to Ethical Hacking (HackTheClass)
 ![HackTheClass](HackTheClass.png)
 
@@ -139,3 +140,30 @@ It is very important for you to be aware of the consequences of cheating, fabric
 If you have a suggestion for improving this class, don't hesitate to tell the instructor or TAs during the semester. At the end of the semester, please don't forget to provide your feedback using the campus-wide CourseEvalUM system. Your comments will help make this class better.
 
 ###### Thanks to the writers of <a href = "https://github.com/UMD-CS-STICs/389Kfall17">this</a> syllabus for the wording of much of this document.
+=======
+### Description
+
+Code base for UMD's CMSC420, Data Structures, Section 0201, Fall 2018.
+
+### Contents
+
+- `src`: Skeleton code for the course's projects, implementation examples, source of class demos and other cool stuff that we find.
+
+
+- `doc`: Various Javadocs. Very useful for projects.
+
+- `README.md`: The current Markdown-formatted README file.
+
+- `LICENSE`: ASCII text file containing a copy of the M.I.T license.
+
+- `.gitignore`: The Git ignore file.
+
+
+### Contact
+
+Contact Jason at [jasonfil@cs.umd.edu](mailto:jasonfil@cs.umd.edu) for questions, or submit a pull request on the [GitHub repository](https://github.com/JasonFil/CMSC420-Fall-2018), or use our Piazza forum. You can also look at our ELMS page for our TAs' office hours.
+
+### License
+
+Refer to the text file `LICENSE` for details.
+>>>>>>> 10dea3bfa8d6de6bb30cdd3ea62afc060b495661
