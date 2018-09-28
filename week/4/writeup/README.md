@@ -1,17 +1,17 @@
 Writeup 3 - Pentesting I
 ======
 
-Name: *PUT YOUR NAME HERE*
-Section: *PUT YOUR SECTION HERE*
+Name: *Erick Guzman*
+Section: *0101*
 
 I pledge on my honor that I havie not given or received any unauthorized assistance on this assignment or examination.
 
-Digital acknowledgement of honor pledge: *PUT YOUR NAME HERE*
+Digital acknowledgement of honor pledge: *Erick Guzman*
 
 ## Assignment 4 Writeup
 
 ### Part 1 (45 pts)
-*Put your writeup >= 300 words here in response to the part 1 prompt*
+The flag is CMSC389R-{ping_as_a_$erv1c3}. The input I put was grd; cd home && ls && cat flag.txt. This outputted the flag that was located in the home directory. I first ran nc conrerstoneairlines.co 45 andi found out that the "Enter IP address" command also executed lines after it. I remembered from class about the mention of command injection. So a simple seach on Google.Com of Command Injection I came across a website called www.owasp.org/index.php/Command_Injection. Through looking at the examples, I started to realize what part 1 was asking us to do. After running the nc command, I realized that it (by looking at the example from the website) I could put a random linux command. I noticed that after I put a fake IP address and then a ;, i put ls command and it displayed what was inside the sever. By looking through various directories, I found the script. In the script found in the OPT directory, the best way to get rid of this vulnerability is to fix the .sh. A simple search on how to fix this problem was found on affinity-it-security.com/how-to-prevent-command-injection. The website mentions about how to fix .sh files so that it would not allow for command injections.  He should rewrite the file such that when executed, it would not accept any semicolons as well as commands. This would mean IP ; Command, but in the execution it should only read until the IP. He should only be accepting an input of Numbers.Numbers.Numbers rather than Numbers.Numbers.Numbers(if any) C(1+) .In this case C is any character after the IP. He should implement the .sh so that it won't accept anymore input after the IP address as well as to make sure that only numbers are accepted as input. I believe this is called Parametrization. This means "use structured mechanisms that automatically enforce the separation between data and command"(Found on the website above). This isn't the only way. The other way is Input Validation. This basically means to validate between what are commands and what arguments and basically have a whitelist of allowed commands and/or arguments. (This was was also on the website owasp.org/index.php/OS_Command_Injection_Defense_Cheat_Sheet)
 
 ### Part 2 (55 pts)
-*Put your writeup >= 200 words here in response to part 2 prompt. Your code for part 2 should be copied into a file in the /writeup directory and pushed there as well*
+First, I nc into the server to see how the command line works. Then I read the description of what the stub.py should first. First, I made the help method which will display the menu in which people can select either shell, pull, help or quit. I wrote a separate method called quit in which if quit is typed, then it would exit the outer shell. When pull is called, it will go to the function and then connect to the server and will directly cat the file that is being pointed and then will write all the content that cat returned from the server and then would be downloaded to the local host. Last but not less, shell. I had trouble with this at first. However, as mentioned above, by messing around with nc, I was able to figure out how to work with the cd command through the command line. Since the server disconnects everytime you do cd or any other command, the shell function will constantly cd the current directly(through a variable made) then will do the command that was given already. All these commands were simple to do except the shell command. By constantly messing around with the nc, It helped me understand more clearly the syntax I had to write for the project.  

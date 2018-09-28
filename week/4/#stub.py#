@@ -30,8 +30,23 @@ def execute_cmd(cmd):
 
                 s.send("something to send\n")   # Send a newline \n at the end of your command
     """
-    print("IMPLEMENT ME")
+    s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+    s.connect((host,port))
+    data= s.recv(1024)
+    pull(cmd)
+
+def pull(cmd):
+    return
+
 
 
 if __name__ == '__main__':
-    print("IMPLEMENT ME")
+    while True:
+        commands = raw_input(">")
+        if(commands.strip() == "help"):
+            help()
+        elif(commands.strip() == 'quit'):
+            break
+        elif(commands.strip() == 'shell'):
+            shell()
+            
