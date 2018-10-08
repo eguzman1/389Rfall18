@@ -6,8 +6,19 @@ my_memset:
         mov rbp, rsp  ;moves up the base pointer to the top of the stack to create a new frame
 
         ;your code goes here!
-
-
+ 				;Counter for for loop
+	mov rcx, 0
+	
+myloop:
+	cmp rcx, rdx
+	jne next
+	je end
+next:	mov byte [rdi + rcx], sil 
+	inc rcx
+	jne myloop
+	
+end:
+	
         leave         ;moves down the stack pointer to the current base pointer,
                       ;and restores our saved base pointer, effectively
                       ;restoring our previous stack frame
@@ -23,9 +34,20 @@ my_strncpy:
         ;;;;;;;;;;;;;;;;;;;;;
         ;your code goes here!
         ;;;;;;;;;;;;;;;;;;;;;
+	mov rcx, 0
 
-
+l:
+	cmp rcx, rdx
+	je last
+	mov rax,[rsi+rcx]
+	mov byte [rdi+rcx],al
+	inc rcx
+	jne l
+last:	
         leave         ;moves down the stack pointer to the current base pointer,
                       ;and restores our saved base pointer, effectively
                       ;restoring our previous stack frame
         ret           ;jumps to the top value on the stack, hopefully the return address!
+
+
+

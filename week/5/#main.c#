@@ -16,8 +16,9 @@ int main(void)
   printf("%s\n", a);
 
   /* should print "Hello Hello!" */
-    my_strncpy(a+6, b, 5);
-      printf("%s\n", a);
+  my_strncpy(a+6, b, 5);
+  printf("%s\n", a);
 
   return 0;
 }
+
