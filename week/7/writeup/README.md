@@ -20,7 +20,7 @@ Digital acknowledgement of honor pledge: *Erick Guzman*
 
 4. iPhone 8
 
-5. 539.5 m above sea level
+5. 539.5 m above sealevel
 
 6.CMSC389R-{look_I_f0und_a_str1ng} and CMSC389R-{abr@cadabra}
  
